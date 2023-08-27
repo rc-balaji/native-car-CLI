@@ -1,3 +1,4 @@
+//Welcome
 // import React, { useState } from 'react';
 // import { View, StatusBar, TouchableWithoutFeedback } from 'react-native';
 // import Header from './Header'; // Adjust the path

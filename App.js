@@ -33,6 +33,7 @@ import Main from './Main';
 import Footer from './Footer';
 import { AppRegistry } from 'react-native';
 const Stack = createStackNavigator();
+// hello
 
 function App() {
   return (

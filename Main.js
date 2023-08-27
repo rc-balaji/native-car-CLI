@@ -95,6 +95,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
   },
+  
+  image1:{
+    resizeMode:'contain',
+    width:500,
+    height:500,
+    position:'relative',
+    right:60,
+   },
   buttonGlow: {
     borderWidth: 2,
     borderColor: 'hsl(158, 98%, 43%)',
@@ -136,8 +144,8 @@ const MainComponent = () => {
   const [temp,setTemp]=useState(0);
   const [mil,setMil]=useState(0);
   const [bat,setBat]=useState(0);
-  const [color,setColor]=useState('red');
-  const [status,setStatus]=useState('Low');
+  const [color,setColor]=useState('green');
+  const [status,setStatus]=useState('Good');
   return (
     <ScrollView style={styles.main}>
     <View style={styles.section}>
@@ -145,7 +153,7 @@ const MainComponent = () => {
         <Text style={[styles.cardTitle,{marginBottom:30}]}>Autonomous car</Text>
         <Text style={styles.cardTitle}>POSRCHE</Text>
         <Text style={[styles.cardDescription,{color:'blue'}]}>
-          <Text style={{ fontSize: 24 }}>⚡</Text> Electric car
+          <Text style={{ fontSize: 24 }}></Text> Electric car
         </Text>
       </View>
       <Image
@@ -165,11 +173,11 @@ const MainComponent = () => {
         height:30,
         borderColor:'white',
         borderWidth:1,
-        marginLeft:120,
+        marginLeft:133,
         backgroundColor:color
         ,alignItems:'center',
         justifyContent:'center',
-        borderRadius:10
+        borderRadius:5
       }} >
         
       <Text >{status}</Text>
@@ -268,7 +276,7 @@ const MainComponent = () => {
           />
           {/* <Text style={styles.rangeValue}>{bat}%</Text> */}
         </View>
-        <Pressable onPress={() => alert('Started')} >
+        <Pressable onPress={() => alert('Cannot start..!..Please Connect your Vehicle')} >
         <View  style={styles.buttonWrapper}>
           <TouchableOpacity style={styles.home__button} >
             <Text style={{ fontSize: 18, color: 'white' }}>START</Text>
@@ -278,69 +286,9 @@ const MainComponent = () => {
 
     
       </View>
-
-      <View style={styles.section}>
-        <Image
-          source={require('./img/about.png')}
-          style={styles.image}
-        />
-        <View style={styles.card}>
-          <Text style={styles.cardTitle}>2.500+</Text>
-          <Text style={styles.cardDescription}>Supercharges placed along popular routes</Text>
-        </View>
-        <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Machines With Future Technology</Text>
-          <Text style={styles.cardDescription}>
-            See the future with high-performance electric cars produced by renowned brands.
-            They feature futuristic builds and designs with new and innovative platforms
-            that last a long time.
-          </Text>
-          <TouchableOpacity   style={styles.button}>
-            <Text style={{ fontSize: 18 }}>Know more</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Choose Your Electric Car Of The Porsche Brand</Text>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>More Features</Text>
-        <View style={{ flexDirection: 'row' }}>
-          <Image
-            source={require('./img/features.png')}
-            style={styles.image}
-          />
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>800v</Text>
-            <Text style={styles.cardDescription}>Turbo Charging</Text>
-          </View>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>350</Text>
-            <Text style={styles.cardDescription}>Km Range</Text>
-          </View>
-          <View style={styles.card}>
-            <Text style={styles.cardTitle}>480</Text>
-            <Text style={styles.cardDescription}>Km Travel</Text>
-          </View>
-        </View>
-        <Image
-          source={require('./img/map.svg')}
-          style={styles.mapImage}
-        />
-      </View>
-
-      <View style={styles.section} id="featured">
-      </View>
-
-      <View style={styles.section} id="offer">
-      </View>
-
-      <View style={styles.section} id="logos">
-      </View>
     </ScrollView>
   );
 };
 
 export default MainComponent;
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   header: {
@@ -35,13 +36,15 @@ const styles = StyleSheet.create({
 });
 
 const Header = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.header}>
       <View style={styles.nav__container}>
         <View style={styles.nav__logo}>
           <TouchableOpacity onPress={() => alert('Logo Clicked')}>
             <Text style={styles.logoText}>
-              <Text style={styles.emoji}>⚪</Text>KRISHTEC
+              <Text style={styles.emoji}>⚙️</Text>KRISHTEC
             </Text>
           </TouchableOpacity>
         </View>
@@ -61,11 +64,16 @@ const Header = () => {
               <Text style={styles.nav__link}>Popular</Text>
             </TouchableOpacity>
           </View>
-          <View style={styles.nav_item}>
+          {/* <View style={styles.nav_item}>
             <TouchableOpacity onPress={() => alert('Map Clicked')}>
-              <Text style={styles.nav__link}>Map</Text>
+              <Text style={styles.nav__link}>Location</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
+          <View style={styles.nav_item}>
+      <TouchableOpacity onPress={() => navigation.navigate('MapScreen')}>
+        <Text style={styles.nav__link}>Location</Text>
+      </TouchableOpacity>
+    </View>
         </View>
       </View>
     </View>
